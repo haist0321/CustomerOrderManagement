@@ -1,0 +1,54 @@
+﻿<Window x:Class="CustomerOrderManagement.Views.OrderWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Tạo đơn hàng"
+        Height="350"
+        Width="400">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Label Content="Khách hàng:" />
+        <ComboBox x:Name="cbCustomers"
+                  DisplayMemberPath="Name"
+                  SelectedValuePath="CustomerId"
+                  Margin="0,5,0,10"
+                  Grid.Row="0" />
+
+        <Label Grid.Row="1"
+               Content="Loại đơn hàng:"
+               Margin="0,5,0,0" />
+        <ComboBox x:Name="cbOrderType"
+                  Grid.Row="1"
+                  Margin="0,25,0,0">
+            <ComboBoxItem Content="Online" />
+            <ComboBoxItem Content="In-Store" />
+            <ComboBoxItem Content="Wholesale" />
+        </ComboBox>
+
+        <Label Grid.Row="2"
+               Content="Tổng tiền:"
+               Margin="0,10,0,0" />
+        <TextBox x:Name="txtTotal"
+                 Grid.Row="2"
+                 Margin="0,30,0,0" />
+
+        <Label Grid.Row="3"
+               Content="Giảm giá:"
+               Margin="0,10,0,0" />
+        <TextBox x:Name="txtDiscount"
+                 Grid.Row="3"
+                 Margin="0,30,0,0" />
+
+        <Button Grid.Row="4"
+                Content="Tạo đơn"
+                Margin="0,20,0,0"
+                Click="CreateOrder_Click" />
+    </Grid>
+</Window>
